@@ -1,0 +1,121 @@
+<div class="row" style="margin-top: 30px;">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Register As Admin for MQ
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal"
+                      role="form"
+                      name="regForm"
+                      ng-submit="adminRegister.submit(regForm.$valid)"
+                      novalidate>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userName.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userName">*Username</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-user glyphicon-user"></i></span>
+                            <input type="text"
+                                   ng-model="adminRegister.newAdmin.username"
+                                   class="form-control input-sm"
+                                   name="userName"
+                                   id="userName"
+                                   placeHolder="Name"
+                                   required />
+
+                        </div>
+
+                        <!--<div ng-show="regForm.useName.$touched"
+                             ng-messages="regForm.userName.$error"
+                             ng-messages-include="messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label text-right">
+                            Secret:
+                        </label>
+                        <div class="col-xs-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-briefcase"></i></span>
+                            <input type="password"
+                                   ng-model="adminRegister.newAdmin.secret"
+                                   class="form-control input-sm"
+                                   name="adminSecret"
+                                   id="admin-seceret"
+                                   placeholder="Admin Secret">
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userPassword.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userPassword">*Password</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password"
+                                   ng-model="adminRegister.newAdmin.password"
+                                   class="form-control input-sm"
+                                   id="userPassword"
+                                   name="userPassword"
+                                   placeholder="Password"
+                                   ng-minlength="6"
+                                   ng-maxlength="15"
+                                   required />
+                        </div>
+
+                        <!--<div ng-show="regForm.userPassword.$touched"
+                             ng-messages="regForm.userPassword.$error"
+                             ng-messages-include="messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userConfirmPassword.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userConfirmPassword">*Confirm Password</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password"
+                                   confirm-password="adminRegister.newAdmin.password"
+                                   ng-model="adminRegister.newAdmin.confirmPassword"
+                                   ng-model-options="{updateOn: 'blur'}"
+                                   class="form-control input-sm"
+                                   id="userConfirmPassword"
+                                   name="userConfirmPassword"
+                                   placeholder="Confirm Password"
+                                   required />
+                        </div>
+
+                        <!--<div ng-show="regForm.userConfirmPassword.$touched"
+                             ng-messages="regForm.userConfirmPassword.$error"
+                             ng-messages-include="messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+
+                    </div>
+
+                    <div class="pull-right">
+                        <button type="submit"
+                                class="btn btn-primary"
+                                ng-disabled="regForm.$invalid || regForm.$pending">
+                            Register
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel-footer"></div>
+        </div>
+
+    </div>
+
+</div>
+

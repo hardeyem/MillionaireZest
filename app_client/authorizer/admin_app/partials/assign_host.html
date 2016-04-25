@@ -1,0 +1,46 @@
+<div class="content-grid mdl-grid assign-host-con">
+    <div class="content-column mdl-cell mdl-cell--4-col players-con">
+        <h4 class="heading">Player List</h4>
+        <ul class="players-list">
+            <li ng-repeat="player in adminHost.players" class="players">
+                <a href="" ng-click="adminHost.assignPlayer(player.detail._id)">
+                    {{player.detail.last_name +' '+ player.detail.first_name}}
+                </a>
+            </li>
+            <li class="players"><a href=""> Mary Jones</a></li>
+            <li class="players"><a href="">Joke Ade</a></li>
+            <li class="players"><a href="">Doris Lane</a></li>
+        </ul>
+    </div>
+    <div class="content-column mdl-cell mdl-cell--4-col assign-view">
+        <h4 class="heading">Game</h4>
+        <div class="player-assign">
+            <span class="assign-name">Player Name</span>
+            <span class="assign-age">Player Age</span>
+            <span class="assign-country">Player Country</span>
+        </div>
+        <span class="with">with</span>
+        <div class="host-assign">
+            <span class="assign-name">Host Name</span>
+            <span class="assign-age">Host Age</span>
+            <span class="assign-country">Host Country</span>
+        </div>
+        <div class="assign-btn">
+            <button class="assign-game mdl-button md-js-button mdl-button--raised primary-color" ng-click="adminHost.assignGame()">Assign</button>
+            <button class="clear mdl-button md-js-button mdl-button--raised mdl-button--accent" ng-click="adminHost.clearGame()">Clear</button>
+        </div>
+    </div>
+    <div class="content-column mdl-cell mdl-cell--4-col host-list-con">
+        <h4 class="heading">Host List</h4>
+        <ul class="host-list">
+            <li ng-repeat="host in adminHost.hosts" class="players">
+                <a href="" ng-click="adminHost.assignHost(host._id)">
+                    {{host.last_name +' '+ host.first_name}}
+                </a>
+            </li>
+            <li class="host"><a href="">Mary Jones</a></li>
+            <li class="host"><a href="">Joke Ade</a></li>
+            <li class="host"><a href="">Doris Lane</a></li>
+        </ul>
+    </div>
+</div>

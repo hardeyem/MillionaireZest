@@ -1,0 +1,57 @@
+
+.reg-con{
+    width: 100%;
+    display: block;
+    position: relative;
+}
+form{
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+}
+form hr{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 11px;
+    color: #ccc;
+}
+.lead{
+    display: block;
+    margin-bottom: 1em;
+}
+.required{
+    color: #d32f2f;
+}
+
+.form-group{
+    wdith : 100%;
+    display: block;
+    margin-bottom: 1em;
+}
+.form-group label{
+    width: 40%;
+    display: inline-block;
+    color: #666;
+}
+
+.form-group input, .form-group select{
+    width: 60%;
+    height: 2em;
+    /*margin-left: 20%;*/
+    display: inline-block;
+    float: right;
+    padding-left: 1%;
+    padding-right: 1%;
+    color: #666;
+}
+
+.reg-btn{
+    width: 60%;
+    display: block;
+    float: right;
+    height: 2em;
+}
+.reg-btn input{
+    width: 100%;
+    height: 100%;
+}

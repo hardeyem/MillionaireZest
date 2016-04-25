@@ -1,0 +1,330 @@
+<!--
+<div class="row" style="margin-top: 30px;">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Register to Lead Assistant
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal"
+                      role="form"
+                      name="regForm"
+                      ng-submit="register.submit(regForm.$valid)"
+                      novalidate>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userName.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userName">*Name</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-user glyphicon-user"></i></span>
+                            <input type="text"
+                                   ng-model="register.newUser.username"
+                                   class="form-control input-sm"
+                                   name="userName"
+                                   id="userName"
+                                   placeHolder="Name"
+                                   required />
+
+                        </div>
+
+                        <div ng-show="regForm.useName.$touched"
+                             ng-messages="regForm.userName.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label text-right">
+                            Company:
+                        </label>
+                        <div class="col-xs-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-briefcase"></i></span>
+                            <input type="text"
+                                   ng-model="register.newUser.company"
+                                   class="form-control input-sm"
+                                   name="userCompany"
+                                   id="user-company"
+                                   placeholder="Company">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label text-right" for="user-phone">
+                            Phone:
+                        </label>
+                        <div class="col-xs-5 input-group" >
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-phone"></i></span>
+                            <input type="tel"
+                                   ng-model="register.newUser.phone"
+                                   ui-mask="(999) 999-9999"
+                                   class="form-control input-sm"
+                                   name="userPhone"
+                                   id="user-phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userEmail.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userEmail">*Email</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input type="email"
+                                   email-dupe-validator
+                                   ng-model="register.newUser.email"
+                                   class="form-control input-sm"
+                                   id="userEmail"
+                                   name="userEmail"
+                                   placeHolder="Email"
+                                   required />
+                        </div>
+
+                        <div ng-show="regForm.userEmail.$touched"
+                             ng-messages="regForm.userEmail.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userPassword.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userPassword">*Password</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password"
+                                   ng-model="register.newUser.password"
+                                   class="form-control input-sm"
+                                   id="userPassword"
+                                   name="userPassword"
+                                   placeholder="Password"
+                                   ng-minlength="6"
+                                   ng-maxlength="15"
+                                   required />
+                        </div>
+
+                        <div ng-show="regForm.usePassword.$touched"
+                             ng-messages="regForm.userPassword.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error':regForm.userConfirmPassword.$invalid}">
+
+                        <label class="control-label col-sm-3" for="userConfirmPassword">*Confirm Password</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password"
+                                   confirm-password="register.newUser.password"
+                                   ng-model="register.newUser.confirmPassword"
+                                   ng-model-options="{updateOn: 'blur'}"
+                                   class="form-control input-sm"
+                                   id="userConfirmPassword"
+                                   name="userConfirmPassword"
+                                   placeholder="Confirm Password"
+                                   required />
+                        </div>
+
+                        <div ng-show="regForm.userConfirmPassword.$touched"
+                             ng-messages="regForm.userConfirmPassword.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>
+
+                    </div>
+
+                    <div class="pull-right">
+                        <button type="submit"
+                                class="btn btn-primary"
+                                ng-disabled="regForm.$invalid || regForm.$pending">
+                            Register
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel-footer"></div>
+        </div>
+
+    </div>
+
+</div>
+
+-->
+<div class="reg-con">
+    <div>Navbar show here</div>
+
+    <form ng-submit="register.registerUser()" novalidate>
+        <div>{{register.show}}</div>
+        <h3>Create an Account</h3>
+        <span class="lead">Already has an account, Please <a href="/#register?page={{register.returnPage }}">Sign In</a></span>
+        <div role="alert" ng-show="register.formError" class="alert alert-danger">{{register.formError }}</div>
+        <div class="form-group">
+            <label>Email<i class="required">*</i></label>
+            <input type="email" ng-model="register.authCredentials.email" name="email" placeholder="email">
+        </div>
+        <div class="form-group">
+            <label>Password<i class="required">*</i></label>
+            <input type="password" ng-model="register.authCredentials.password" name="password" placeholder="password">
+        </div>
+        <div class="form-group">
+            <label>Confirm Password<i class="required">*</i></label>
+            <input type="password" ng-model="register.authCredentials.confirmPassword" name="confirm_password" placeholder="password">
+        </div>
+        <div class="form-group">
+            <label>Mobile<i class="required">*</i></label>
+            <input type="tel" ng-model="register.authCredentials.mobile" name="mobile" placeholder="">
+        </div>
+        <hr>
+        <div class="form-group">
+            <label>Title<i class="required">*</i></label>
+            <select ng-model="register.credentials.title" name="title">
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Doc.">Doc.</option>
+                <option value="Eng.">Eng.</option>
+                <option value="Prof.">Prof.</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>First Name<i class="required">*</i></label>
+            <input type="text" ng-model="register.credentials.first_name" name="first_name">
+        </div>
+
+        <div class="form-group">
+            <label>Initial</label>
+            <input type="text" ng-model="register.credentials.initial" name="initial">
+        </div>
+
+        <div class="form-group">
+            <label>Last Name<i class="required">*</i></label>
+            <input type="text" ng-model="register.credentials.last_name" name="last_name">
+        </div>
+
+        <div>
+            <label>
+                Male
+                <input type="radio" ng-model="register.credentials.sex" name="sex" value="male">
+            </label>
+            <label>
+                Female
+                <input type="radio" ng-model="register.credentials.sex" name="sex" value="female">
+            </label>
+        </div>
+        <div class="">
+            <label>Date of Birth<i class="required">*</i></label>
+            <select ng-model="register.credentials.day" name="day">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select ng-model="register.credentials.month" name="month">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <select ng-model="register.credentials.year" name="year">
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1997</option>
+                <option value="1996">1996</option>
+                <option value="1995">1995</option>
+                <option value="1994">1994</option>
+                <option value="1993">1993</option>
+                <option value="1992">1992</option>
+                <option value="1991">1991</option>
+                <option value="1990">1990</option>
+                <option value="1989">1989</option>
+                <option value="1988">1988</option>
+                <option value="1987">1987</option>
+                <option value="1986">1986</option>
+                <option value="1985">1985</option>
+                <option value="1984">1984</option>
+                <option value="1983">1983</option>
+                <option value="1982">1982</option>
+                <option value="1981">1981</option>
+                <option value="1980">1980</option>
+                <option value="1979">1979</option>
+                <option value="1978">1978</option>
+                <option value="1977">1977</option>
+                <option value="1976">1976</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Address<i class="required">*</i></label>
+            <input type="text" ng-model="register.credentials.address" name="addres">
+        </div>
+        <div class="form-group">
+            <label>City<i class="required">*</i></label>
+            <input type="text" ng-model="register.credentials.city" name="city">
+        </div>
+
+        <div class="form-group">
+            <label>State<i class="required">*</i></label>
+            <input type="text" ng-model="register.credentials.state" name="state">
+        </div>
+        <div class="form-group">
+            <label>Country<i class="required">*</i></label>
+            <input type="text" ng-model="register.credentials.country" name="country">
+        </div>
+
+        <div>
+            <input type="checkbox" ng-model="register.credentials.terms" name="terms">
+            <label>Agree with terms and conditions</label>
+        </div>
+
+        <div class="reg-btn">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>

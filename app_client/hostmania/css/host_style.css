@@ -1,0 +1,585 @@
+/**** Admin Style *******/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+body{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/*********
+***** Material ddesign icon styles goes here
+**********/
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+    url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
+    url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color:#004444;
+    box-sizing: border-box;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+/*// Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/*// Rules for using icons as black on a light background.*/
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/*// Rules for using icons as white on a dark background.*/
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+/*body{
+    width: 100%;
+    height: 695px;
+    margin: 0;
+    padding: 0;
+}*/
+/*
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}*/
+
+.primary-color{
+    background-color: #46B6AC;/*#004444;*/
+}
+
+.content-grid{
+    max-width: 100%;
+    min-height: calc(100% - 3em);
+    max-height: calc(100% - 3em);
+    /*height: 100%;*/
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /*border: 1px solid #0d47a1;*/
+}
+.content-grid .content-column{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    /*height: 636px;*/
+    display: block;
+    position: relative;
+
+    /*border: 1px solid #00c853;*/
+}
+
+
+
+#main-wrapper{
+    width: 100%;
+    height: auto;
+    min-height: 695px;
+    display: block;
+    position: relative;
+}
+#host-menu{
+    width: 100%;
+    height: 2em;
+    background: #004d40;
+    display: block;
+
+}
+
+/************* Menu ******************/
+.host-menu{
+    width: 100%;
+    list-style: none;
+    color: #ededed;
+    display: block;
+}
+.host-menu-item{
+    width: 10%;
+    display: inline-block;
+    height: 100%;
+}
+
+.host-menu-item a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    display: block;
+}
+.host-menu-item a:hover {
+    color: #004d40;
+    background: #d7d7d7;
+}
+
+
+#content{
+    width: 100%;
+    height: auto;
+    min-height: 695px;
+    display: block;
+    position: relative;
+    background-color: #ededed;
+}
+
+
+/*********** Host Game ******************/
+
+.game-tip{
+    width: 50%;
+    height: 18px;
+    margin: 0 auto;
+    background: #d84315;
+    font-size: 12px;
+    text-align: center;
+    color: #ededed;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/** User Interaction Board **/
+.user-action-board{
+    height: 100%;
+    position: relative;
+    /*background: #fff;*/
+}
+
+.gameBtn {
+    width: 100%;
+    display: block;
+    margin-bottom : 1em;
+}
+.gameBtn button{
+    color: #006666;
+    font-size: 12px;
+    border: 1px solid #ccc;
+}
+
+.game-live{
+    width: 100%;
+    height: 3em;
+    display: block;
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 1em;
+}
+.game-live span{
+    width: 31%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 1em;
+    line-height: normal;
+}
+.game-live span:nth-child(2){
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+}
+
+.provided-answer{
+    width: 100%;
+    height: auto;
+    min-height: 17em;
+    background-color: #fff;
+    display: block;
+    position: relative;
+}
+
+.game-live span.liveUsed{
+    margin: 0;
+    padding: 1%;
+    display: inline-block;
+    line-height: normal;
+    background: #eeeeee;
+    color: firebrick;
+}
+.game-live .live_enable{
+    display: block;
+}
+.game-live .live_disable{
+    display: none;
+}
+
+.game-live .material-icons{
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    color: firebrick;
+}
+.provided-answer h4{
+    width: 100%;
+    height: 3em;
+    display: block;
+    background: #ccc;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    padding-top: 8px;
+}
+.user-opt{
+    width: 100%;
+    height: auto;
+    min-height: 4em;
+    display: block;
+    margin-bottom: 1%;
+}
+.user-opt span{
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+
+.provider-btn{
+    width: 100%;
+    height: 7em;
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    display: block;
+    padding: 2% 1% 2% 2%;
+}
+
+.provider-btn button{
+    width: 100%;
+    height: 3em;
+    display: block;
+    margin-bottom: 3%;
+}
+.player-detail{
+    width: 100%;
+    height: auto;
+    min-height: 10em;
+    display: block;
+    position: relative;
+    background: #fff;
+    margin-top: 2em;
+}
+
+.player-detail h3{
+    width: 100%;
+    height: 3em;
+    background: #ccc;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    padding: 0px;
+    padding-top: 8px;
+}
+
+.player-detail img{
+    width: 100%;
+    height: 12em;
+    display: block;
+}
+
+.player-info{
+    text-align: center;
+    font-size: 12px;
+    color: #006666;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.player-info span{
+    width: 100%;
+    display: block;
+}
+/** Question Bpard **/
+.quest-card.mdl-card {
+    width: 100%;
+    min-height: 10em;
+}
+.quest-card > .mdl-card__title {
+    color: #fff;
+    background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
+.quest-card  .mdl-card__title-text{
+    width: 100%;
+    margin: 0;
+}
+.quest{
+    width: 85%;
+    float: left;
+    display: block;
+    padding-top: 1em;
+    /*border: 2px solid #000000;*/
+}
+.quest-icon{
+    width:13%;
+    float: right;
+    display: block;
+    /*padding: 1%;*/
+    padding-top: 2%;
+    color: #fff;
+    text-align: right;
+    font-size: 3em;
+    /*border: 2px solid #d32f2f;*/
+}
+
+.quest-btn{
+
+}
+.quest-btn button{
+    /*margin-right: 1em;*/
+}
+.quest-btn button:first-child{
+    /*margin-left: 10%;*/
+}
+
+.quest-opt-view{
+    display: block;
+    font-size: 14px;
+}
+.quest-opt-view div{
+    width: 100%;
+    height: 1em;
+    display: inline-flex;
+    text-align: center;
+}
+.quest-opt-view div i{
+    width:18px;
+    height: 16px;
+    margin-right: 1em;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #999999;
+    border-radius: 48%;
+}
+.quest-opt-view div span{
+    /*line-height: 2em;*/
+}
+
+button.option.correct-opt.mdl-button--fab:focus:not(:active){
+    background-color: #46B6AC !important;
+}
+button.option.wrong-opt.mdl-button--fab:focus:not(:active){
+    background-color: #d32f2f !important;
+}
+
+.correct{
+    margin-top: 3em;
+    width: 100%;
+    display: block;
+}
+.correct span{
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+.quest-level{
+    width: 100%;
+    height: 2em;
+    display: inline-block;
+    text-align: center;
+}
+.quest-level label{
+    display: inline-block;
+    font-size: 11px;
+    color: #666;
+    margin-left: 2%;
+}
+
+.quest-level input{
+    border: 1px solid #006666;
+}
+/** Conversation Board **/
+.conversation-board{
+    height: 760px;
+    background: #fff;
+}
+
+.cam-con{
+    width: 100%;
+    height: 40%;
+    min-height: 40%;
+    display: block;
+}
+.cam-con div.player-cam, .cam-con div.host-cam{
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid #d7d7d7;
+}
+
+.cam-con .player-cam{
+    float: left;
+}
+.cam-con .host-cam{
+    float: right;
+}
+
+.conversation{
+    padding-top: 2%;
+    width: 100%;
+    height: 60%;
+    position: relative;
+    background: #fff;
+}
+.msg-con{
+    list-style: none;
+    margin: 0%;
+    width: 100%;
+    height: 85%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: auto;
+    display: block;
+}
+.msg-con li{
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+.msg-con span{
+    width: auto;
+    min-width: 10%;
+    max-width: 40%;
+    height: auto;
+    min-height: 2em;
+    background: #ededed;
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 4px;
+    clear: both;
+    padding: 1% 2% 0 2%;
+    font-size: 12px;
+    color: #666;
+    line-height: normal;
+    border: 1px solid #CCCCCC;
+}
+.msg-con span.host-msg{
+    float: left;
+    margin-left: 50%;
+    /*text-align: left;*/
+}
+.msg-con span.player-msg{
+    float: right;
+    margin-right: 50%;
+    /*text-align: right;*/
+}
+.new-msg{
+    width: 100%;
+    height: 10%;
+    margin-top: 2%;
+    position: absolute;
+    bottom: 2%;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.new-msg input{
+    width: 85%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    padding: 1% 2% 1% 2%;
+    color: #666;
+    font-size: 12px;
+    border: 0px;
+}
+.new-msg button{
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+}
+
+
+/*** / Conversation **/
+/** Game Trend Board **/
+.trend-board{
+    height: 100%;
+    /*background-color: #fff;*/
+}
+
+.level-con{
+    width: 100%;
+    height: 400px;
+    /*background: #fff;*/
+}
+.level-con h3{
+    width: 100%;
+    height: 2em;
+    margin: 0;
+    padding: 0;
+    padding-top: 4px;
+    display: block;
+    line-height: normal;
+    background: #ccc;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+
+
+}
+
+.level-list{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.level-list li{
+    width: 100%;
+    display: block;
+    clear: both;
+    list-style: none;
+    color: steelblue;
+    font-weight: 600;
+}
+.level-list li span{
+    width: 70%;
+    float: left;
+    text-align: right;
+}
+.level-list li i{
+    width: 30%;
+    float: right;
+    text-align: left;
+}

@@ -1,0 +1,15 @@
+<div id="main-wrapper">
+    <div qp-admin-menu></div>
+    <div id="content" class="content">
+        <div class="host-con">
+            <ul class="host-nav">
+                <li class="host-nav-item"><a href="" ui-sref="host.addhost">Addhost</a> </li>
+                <li class="host-nav-item"><a href="" ui-sref="host.assignHost">Assign Host</a> </li>
+                <li class="host-nav-item"><a href="" ui-sref="">Delete Host</a> </li>
+            </ul>
+
+            <div ui-view class="admin-host-content"></div>
+            <div class="admin-info">{{adminHost.info}}</div>
+        </div>
+    </div>
+</div>

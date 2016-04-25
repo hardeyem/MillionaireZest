@@ -1,0 +1,196 @@
+/**
+*   The gloabal style goes here
+**/
+/* general styles*/
+*{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.content-wrapper{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.content-view{
+  width: 100%;
+  height: auto;
+}
+
+/*********
+***** Material ddesign icon styles goes here
+**********/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+  url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
+  url(../libs/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color:#004444;
+  box-sizing: border-box;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+/*// Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/*// Rules for using icons as black on a light background.*/
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/*// Rules for using icons as white on a dark background.*/
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+/*body{
+    width: 100%;
+    height: 695px;
+    margin: 0;
+    padding: 0;
+}*/
+/*
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}*/
+
+.primary-color{
+  background-color: #46B6AC;/*#004444;*/
+}
+#main-wrapper{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 695px;
+  /*overflow-x: auto;*/
+}
+
+#content-wrapper{
+  width: 97%;
+  /*height: 100%;*/
+  height: 695px;
+  position: relative;
+  left: 3%;
+  display: block;
+  color: #333;
+  overflow-x: hidden;
+  /*background-color: #e1e1e1;*/
+  /*border: 1px solid #d32f2f;*/
+}
+#wrapper{
+  width: 100%;
+}
+
+#left-navbar-wrapper{
+  width: 3%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  display: block;
+
+}
+
+#top-navbar-wrapper{
+    width: 97%;
+    position: fixed;
+    display: block;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+}
+.content-con{
+    margin-top: 3em;
+}
+
+.content-grid{
+  max-width: 100%;
+  min-height: calc(100% - 3em);
+  max-height: calc(100% - 3em);
+  /*height: 100%;*/
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  z-index: 0;
+  /*border: 1px solid #0d47a1;*/
+}
+.content-grid .content-column{
+  padding-bottom: 0;
+  margin-bottom: 0;
+  height: 636px;
+  display: block;
+  position: relative;
+
+  /*border: 1px solid #00c853;*/
+}
+
+.carousel{
+  overflow-x: hidden;
+}
+.carousel > ul{
+  width: 1925px;
+  padding: 0;
+  margin: 0px;
+}
+.carousel .carousel-item{
+  list-style: none;
+  float: left;
+  display: block;
+  margin: 0px;
+}
+
+.slider{
+  margin: 0;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.slider li{
+  display: none;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+}

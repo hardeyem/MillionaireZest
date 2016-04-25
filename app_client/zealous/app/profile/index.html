@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <base href="profile" />
+    <title>profile</title>
+
+    <link rel="stylesheet" href="../libs/mdl/material.css">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/global_style.css" />
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+
+
+    <!-- build:scripts -->
+
+    <!-- jQuery -->
+    <script src="../libs/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap -->
+    <!--<script src="libs/bootstrap/dist/js/bootstrap.js"></script>-->
+    <!-- lodash -->
+    <!--<script src="libs/lodash/dist/lodash.js"></script>-->
+
+    <!-- Angular Core -->
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <script src="../libs/angular-route/angular-route.js"></script>
+    <script src="../libs/angular-messages/angular-messages.js"></script>
+
+    <!-- Angular UI -->
+    <!--<script src="libs/angular-bootstrap/ui-bootstrap.js"></script>-->
+    <!--<script src="libs/angular-ui-utils/ui-utils.js"></script>-->
+    <script src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--<script src="libs/angular-ui-select/dist/select.js"></script>-->
+
+    <!-- GameBoard Core -->
+    <script src="profile_module.js"></script>
+    <script src="profile.js"></script>
+    <script src="profile-route.js"></script>
+    <script src="profile_ctrl.js"></script>
+
+    <!-- Model Services --->
+    <script src="../common/services/authtentication.js"></script>
+
+    <!-- Controllers ---->
+    <script src="../../common/controllers/navbar.js"></script>
+
+    <!-- Directives ---->
+    <script src="../../common/directives/left_navbar.js"></script>
+    <script src="../../common/directives/top_navbar.js"></script>
+    <script src="../../common/directives/notifications.js"></script>
+    <script src="../../common/directives/messages.js"></script>
+    <script src="../../common/directives/live_show.js"></script>
+    <script src="../../common/directives/compose_message.js"></script>
+    <script src="../../common/directives/footer.js"></script>
+
+
+
+
+    <script src="../libs/mdl/material.js"></script>
+
+</head>
+<body ng-app="ProfileModule">
+
+    <div id="main-wrapper">
+        <div qp-left-navbar id="left-navbar-wrapper"></div>
+
+        <div id="content-wrapper" class="mdl-color--grey-300">
+            <div qp-top-navbar id="top-navebar-wrapper"></div>
+            <div ui-view></div>
+            <div class="drawer-wrapper"></div>
+        </div>
+    </div>
+</body>
+</html>

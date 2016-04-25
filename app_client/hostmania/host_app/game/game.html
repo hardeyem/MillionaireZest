@@ -1,0 +1,148 @@
+<div id="main-wrapper">
+    <div qp-host-menu></div>
+    <div id="content" class="content">
+        <div class="game-tip">Your game today is with.....</div>
+        <div class="content-grid mdl-grid">
+            <div class="content-column mdl-cell mdl-cell--2-col user-action-board">
+                <div class="gameBtn">
+                    <button ng-click="game.startGame()" class="mdl mdl-button mdl-js-button">Start</button>
+                    <button ng-click="game.endGame()" class="mdl mdl-button mdl-js-button">End</button>
+                </div>
+                <div class="game-live">
+                    <span ng-class="$game.playerUseLive[0] ? live_enable : live_disable"ng-if="game.playerUseLive[0]" >Live1</span>
+                    <span ng-class="$game.playerUseLive[0] ? live_enable : live_disable" ng-if="!game.playerUseLive[0]" class="liveUsed"><i class="material-icons">close</i></span>
+                    <span ng-class="$game.playerUseLive[1] ? live_enable : live_disable" ng-if="game.playerUseLive[1]" >Live2</span>
+                    <span ng-class="$game.playerUseLive[1] ? live_enable : live_disable"ng-if="!game.playerUseLive[1]" class="liveUsed"><i class="material-icons">close</i></span>
+                    <span ng-class="$game.playerUseLive[2] ? live_enable : live_disable" ng-if="game.playerUseLive[2]" >Live3</span>
+                    <span ng-class="$game.playerUseLive[2] ? live_enable : live_disable"ng-if="!game.playerUseLive[2]" class="liveUsed"><i class="material-icons">close</i></span>
+                </div>
+                <div class="provided-answer mdl-shadow--2dp">
+                    <h4>provided answer</h4>
+                    <div class="user-opt" ng-if="!game.playerAnswer">
+                        <span>option</span>
+                        <span>The option value is the value to the boy show in las vegas</span>
+                    </div>
+                    <div class="user-opt" ng-if="game.playerAnswer">
+                        <span>{{game.playerAnswer.option}}</span>
+                        <span>{{game.playerAnswer.value}}</span>
+                    </div>
+                    <div class="provider-btn">
+                        <button ng-click="game.finalAnswer(game.playerAnswer.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Final Answer</button>
+                        <button ng-click="game.correctAnswer(game.playerAnswer.value)" class="mdl-button mdl-js-button mdl-button--raised primary-color">Validate Answer</button>
+
+                    </div>
+                </div>
+                <div class="player-detail mdl-shadow--2dp">
+                    <h3>Player Details</h3>
+                    <img src="../../../imgs/peculiar.jpg">
+                    <div class="player-info">
+                        <span class="name">{{game.playerName}}</span>
+                        <span class="age">{{game.playerAge}}</span>
+                        <span class="sex">{{game.playerSex}}</span>
+                        <span class="country">{{game.playerCountry}}</span>
+                        <hr>
+                        <span class="worth">Worth : <i>{{game.playerWorth}}</i></span>
+                        <span class="earned">Earned : <i>{{game.playerEarned}}</i></span>
+                        <span class="last_earned">Last Earned : <i>{{game.playerLastEarned}}</i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-column mdl-cell mdl-cell--3-col question-board">
+                <div class="quest-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <div class="mdl-card__title-text">
+                            <span class="quest">{{game.question}}</span>
+                            <span class="quest-icon">?</span></div>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <!--<table class="mdl-data-table mdl-js-data-table mdl-data-table&#45;&#45;selectable mdl-shadow&#45;&#45;2dp">
+                            <tbody>
+                                <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option a is the</td></tr>
+                                <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option b is the</td></tr>
+                                <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option c is the</td></tr>
+                                <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option d is the</td></tr>
+                            </tbody>
+
+
+                        </table>-->
+                        <div class="quest-opt-view">
+                            <div><i>a</i><span class="quest-opt" >{{game.options.a}}</span></div>
+                            <div><i>b</i><span class="quest-opt">{{game.options.b}}</span></div>
+                            <div><i>c</i><span class="quest-opt">{{game.options.c}}</span></div>
+                            <div><i>d</i><span class="quest-opt">{{game.options.d}}</span></div>
+                        </div>
+                        <div class="correct">
+                            <span>Correct Option</span>
+                            <span>{{game.options.correct}}</span>
+                        </div>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border quest-btn">
+                        <div class="quest-level">
+                            <label>Level : </label>
+                            <label for="level0">0
+                                <input type="radio" id="level0" name="level" ng-model="game.questLevel" value="0">
+                            </label>
+                            <label for="level1">1
+                                <input type="radio" id="level1" name="level" ng-model="game.questLevel" value="1">
+                            </label><label for="level2">2
+                                <input type="radio" id="level2" name="level" ng-model="game.questLevel" value="2">
+                            </label><label for="level3">3
+                                <input type="radio" id="level3" name="level" ng-model="game.questLevel" value="3">
+                            </label><label for="level4">4
+                                <input type="radio" id="level4" name="level" ng-model="game.questLevel" value="4">
+                            </label><label for="level5">5
+                                <input type="radio" id="level5" name="level" ng-model="game.questLevel" value="5">
+                            </label>
+                        </div>
+                        <button ng-click="game.generateQuest(game.questLevel)" class="mdl-button mdl-js-button mdl-button--raised primary-color">Generate</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Randomise</button>
+                        <button ng-click="game.askQuestion()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Ask</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-column mdl-cell mdl-cell--6-col mdl-shadow--2dp conversation-board">
+                <div class="cam-con">
+                    <div class="player-cam">
+                        <video id='remoteVideo' ng-src="{{game.remoteVideoUrl}}" autoplay width="100%" height="100%" class="remote"></video>
+                    </div>
+                    <div class="host-cam">
+                        <video id="localVideo" ng-src="{{game.localVideoUrl}}" autoplay muted width="100%" height="100%" ></video>
+                    </div>
+                </div>
+                <div class="conversation">
+                    <ul class="msg-con">
+                        <li ng-repeat="converse in game.conversations" class=""><span class="{{converse.user + '-msg'}}">{{converse.msg}}</span></li>
+                        <!--<li><span class="host-msg">Hello i am yemi, Good day</span></li>-->
+                        <!--<li><span class="player-msg">Good day</span></li>-->
+                    </ul>
+                    <div class="new-msg">
+                        <input ng-model="game.commentText" type="text" contenteditable="true">
+                        <button ng-click="game.converse(game.commentText)">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-column mdl-cell mdl-cell--1-col">
+                <div class="level-con  mdl-color--white mdl-shadow--2dp">
+                    <h3>Level</h3>
+                    <ul class="level-list">
+                        <li data-level="15"><span>10,000</span><i ng-if="game.levelReached == 15" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="14"><span>5,000</span><i ng-if="game.levelReached == 14" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="13"><span>4,000</span><i ng-if="game.levelReached == 13" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="12"><span>3,000</span><i ng-if="game.levelReached == 12" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="11"><span>2,000</span><i ng-if="game.levelReached == 11" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="10"><span>1,000</span><i ng-if="game.levelReached == 10" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="9"><span>900</span><i ng-if="game.levelReached == 9" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="8"><span>800</span><i ng-if="game.levelReached == 8" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="7"><span>700</span><i ng-if="game.levelReached == 7" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="6"><span>600</span><i ng-if="game.levelReached == 6" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="5"><span>500</span><i ng-if="game.levelReached == 5" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="4"><span>400</span><i ng-if="game.levelReached == 4" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="3"><span>300</span><i ng-if="game.levelReached == 3" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="2"><span>200</span><i ng-if="game.levelReached == 2" class="material-icons">keyboard_backspace</i></li>
+                        <li data-level="1"><span>100</span><i ng-if="game.levelReached == 1" class="material-icons">keyboard_backspace</i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

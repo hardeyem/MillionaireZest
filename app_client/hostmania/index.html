@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!--<base href="hostmania">-->
+    <title>MQ - HOST </title>
+
+    <link rel="stylesheet" href="../libs/mdl/material.css">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/host_style.css">
+
+
+    <!-- build:scripts -->
+
+    <!-- jQuery -->
+    <script src="../libs/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap -->
+    <!--<script src="libs/bootstrap/dist/js/bootstrap.js"></script>-->
+    <!-- lodash -->
+    <!--<script src="libs/lodash/dist/lodash.js"></script>-->
+    <script src="../libs/mdl/material.js"></script>
+    <!--- Socket =---->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Angular Core -->
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <script src="../libs/angular-route/angular-route.js"></script>
+    <script src="../libs/angular-messages/angular-messages.js"></script>
+
+    <!-- Angular UI -->
+    <!--<script src="libs/angular-bootstrap/ui-bootstrap.js"></script>-->
+    <!--<script src="libs/angular-ui-utils/ui-utils.js"></script>-->
+    <script src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--<script src="libs/angular-ui-select/dist/select.js"></script>-->
+
+    <!-- Access Core -->
+    <script src="host_app/host_module.js"></script>
+    <script src="host_app/host.js"></script>
+    <script src="host_app/host_route.js"></script>
+
+
+    <!--- Access Module --->
+    <script src="host_app/access/access_module.js"></script>
+    <script src="host_app/access/access_route.js"></script>
+    <script src="host_app/access/auth_ctrl.js"></script>
+
+
+    <!--- Home and Navbar module --->
+    <script src="host_app/dash/dash_ctrl.js"></script>
+    <script src="../common/directives/host_menu.js"></script>
+    <script src="../common/controllers/host_menu.js"></script>
+
+
+    <!---- Game Module -------->
+    <script src="host_app/game/game_module.js"></script>
+    <script src="host_app/game/game_route.js"></script>
+    <script src="host_app/game/game_ctrl.js"></script>
+
+    <!-- Model Services -->
+    <!--<script src="app/common/service/access-service.js"></script>-->
+    <!--<script src="../common/services/login-service.js"></script>-->
+    <!--<script src="app/common/service/register-service.js"></script>-->
+    <!--<script src="app/common/services/user-service.js"></script>-->
+    <script src="../common/services/host_auth.js"></script>
+    <script src="../common/services/HostSvc.js"></script>
+<body ng-app="HostModule">
+
+    <div ui-view>
+
+    </div>
+
+</body>
+</html>

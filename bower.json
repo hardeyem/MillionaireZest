@@ -1,0 +1,24 @@
+{
+  "name": "MillionaireZest",
+  "description": "The game for the zealous Millionaire",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-loader": "latest",
+    "font-awesome":"latest",
+    "angular-material":"latest",
+    "angular-ui-router": "latest",
+    "angular-cookies": "latest",
+    "angular-sanitize": "latest",
+    "angular-resource": "latest",
+    "es5-shim": "latest",
+    "jquery": "latest",
+    "angular-storage":"latest",
+    "lodash": "~2.4.1",
+    "toastr": "~2.1.0",
+    "material-design-lite":"latest"
+  }
+}

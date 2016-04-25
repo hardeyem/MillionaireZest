@@ -1,0 +1,95 @@
+<div class="row" style="margin-top: 30px;">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Login to MQ host Page
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal"
+                      role="form"
+                      name="loginForm" novalidate>
+
+                    <div class="form-group"
+                         ng-class="{'has-error': loginForm.username.$invalid}">
+
+                        <label class="control-label col-sm-3" for="username">*Username</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input ng-model="hostAuth.hostUser.username"
+                                   class="form-control input-medium"
+                                   type="text"
+                                   id="username"
+                                   name="username"
+                                   placeHolder="Username"
+                                   required />
+                        </div>
+
+                        <!--<div ng-if="loginForm.userEmail.$touched && loginForm.userEmail.$invalid"
+                             ng-messages="loginForm.userEmail.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error': loginForm.userPassword.$invalid}">
+                        <label class="control-label col-sm-3" for="userPassword">*Password</label>
+                        <div class="col-sm-6 input-group">
+                            <span class="input-group-addon input-medium"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input ng-model="hostAuth.hostUser.password"
+                                   class="form-control input-sm"
+                                   type="password"
+                                   id="userPassword"
+                                   name="userPassword"
+                                   placeholder="Password"
+                                   required />
+                        </div>
+
+                        <!--<div ng-show="loginForm.userPassword.$touched && loginForm.userPassword.$invalid"
+                             ng-messages="loginForm.userPassword.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+
+                    </div>
+
+                    <div class="checkbox col-sm-offset-3">
+                        <label class="col-sm-8">
+                            <input type="checkbox" ng-model="hostAuth.hostUser.autoLogin"> Remember me
+                        </label>
+                    </div>
+
+                    <div class="col-xs-offset-3">
+                        <button type="submit"
+                                ng-click="hostAuth.login(loginForm.$valid);"
+                                class="btn btn-primary">
+                            Login
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="checkbox col-sm-offset-3">
+                    <a ui-sref="access.register">Register New Account</a>
+                </div>
+
+            </div>
+
+            <div class="panel-footer">
+                <!--
+                <h4>Login Using</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Facebook</li>
+                    <li class="list-group-item">Twitter</li>
+                    <li class="list-group-item">Github</li>
+                </ul>
+                -->
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

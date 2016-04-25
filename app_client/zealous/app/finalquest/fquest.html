@@ -1,0 +1,177 @@
+<div class="content-grid mdl-grid" xmlns="http://www.w3.org/1999/html">
+    <div class="content-column mdl-cell mdl-cell--2-col  user-action-board">
+        <div class="game-btn">
+            <button ng-click="fq.playerReady()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary">Ready</button>
+            <button ng-click="fq.walkAway()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary">Walk Away</button>
+        </div>
+        <div class="game-live mdl-shadow--2dp">
+            <ul class="live-list">
+                <li class="drop">
+                    <button class="mdl-button mdl-js-button" ng-click="fq.showLiveOpt(0)" ng-class="$fq.lives[0] ? live_enable : live_disable" ng-if="fq.lives[0]">Live1</button>
+                    <button class="mdl-button mdl-js-button" ng-class="$fq.lives[0] ? live_enable : live_disable" ng-if="!fq.lives[0]" disabled>Live1</button>
+
+                    <div class="dropdownContain">
+                        <div class="arrow_box">
+                            <div class="box">
+                                <span>Do you want to use your REVERT OPTION ?</span>
+                                <div>
+                                    <a href="" ng-click="fq.useLive(0)">yes</a>
+                                    <a href="" ng-click="fq.rejectLive(0)">no</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="drop">
+                    <button class="mdl-button mdl-js-button" ng-click="fq.showLiveOpt(1)" ng-class="$fq.lives[1] ? live_enable : live_disable" ng-if="fq.lives[1]">Live2</button>
+                    <button class="mdl-button mdl-js-button" ng-class="$fq.lives[1] ? live_enable : live_disable" ng-if="!fq.lives[1]" disabled>Live2</button>
+                    <div class="dropdownContain">
+                        <div class="arrow_box">
+                            <div class="box">
+                                <span>Do you want to use your DOUBLE OPTION ?</span>
+                                <div>
+                                    <a href="" ng-click="fq.useLive(1)">yes</a>
+                                    <a href="" ng-click="fq.rejectLive(1)">no</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="drop">
+                    <button class="mdl-button mdl-js-button" ng-click="fq.showLiveOpt(2)" ng-class="$fq.lives[2] ? live_enable : live_disable" ng-if="fq.lives[2]">Live3</button>
+                    <button class="mdl-button mdl-js-button" ng-class="$fq.lives[2] ? live_enable : live_disable" ng-if="!fq.lives[2]" disabled>Live3</button>
+                    <div class="dropdownContain">
+                        <div class="arrow_box">
+                            <div class="box">
+                                <span>Do you want to use your DOUBLE CHANCE ?</span>
+                                <div>
+                                    <a href="" ng-click="fq.useLive(2)">yes</a>
+                                    <a href="" ng-click="fq.rejectLive(2)">no</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="content-column mdl-cell mdl-cell--3-col">
+
+        <div class="quest-card mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand">
+                <div class="mdl-card__title-text">
+                    <span class="quest" ng-if="fq.gameQuestion == null || fq.gameQuestion == 'undefined'">Questions are provided here</span>
+                    <span class="quest" ng-if="fq.gameQuestion != null && fq.gameQuestion != 'undefined'">{{fq.gameQuestion}}</span>
+                    <span class="quest-icon">?</span>
+                </div>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <!--<table class="mdl-data-table mdl-js-data-table mdl-data-table&#45;&#45;selectable mdl-shadow&#45;&#45;2dp">
+                    <tbody>
+                        <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option a is the</td></tr>
+                        <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option b is the</td></tr>
+                        <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option c is the</td></tr>
+                        <tr><td><i class="material-icons">radio_button_unchecked</i></td><td class="quest-opts">option d is the</td></tr>
+                    </tbody>
+
+
+                </table>-->
+                <div class="quest-opt-view" ng-if="!fq.gameOptions">
+                    <div><i>a</i><span class="quest-opt" >Option a is found here</span></div>
+                    <div><i>b</i><span class="quest-opt">Option b is found here</span></div>
+                    <div><i>c</i><span class="quest-opt">Option c is found here</span></div>
+                    <div><i>d</i><span class="quest-opt">Option d is found here</span></div>
+                </div>
+                <div class="quest-opt-view" ng-if="fq.gameOptions">
+                    <div><i>a</i><span class="quest-opt" >{{fq.gameOptions.a}}</span></div>
+                    <div><i>b</i><span class="quest-opt">{{fq.gameOptions.b}}</span></div>
+                    <div><i>c</i><span class="quest-opt">{{fq.gameOptions.c}}</span></div>
+                    <div><i>d</i><span class="quest-opt">{{fq.gameOptions.d}}</span></div>
+                </div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border quest-btn" ng-if="fq.gameBtn">
+
+                <button ng-click="fq.answerBtn('a')" class="mdl-button mdl-js-button mdl-button--fab option" data-opt="a">
+                    <!--<i class="material-icons">add</i>-->
+                    A
+                </button>
+                <button ng-click="fq.answerBtn('b')" class="mdl-button mdl-js-button mdl-button--fab option" data-opt="b">
+                    <!--<i class="material-icons">add</i>-->
+                    B
+                </button>
+                <button ng-click="fq.answerBtn('c')" class="mdl-button mdl-js-button mdl-button--fab option" data-opt="c">
+                    C
+                </button>
+                <button ng-click="fq.answerBtn('d')" class="mdl-button mdl-js-button mdl-button--fab option" data-opt="d" >
+                    <!--<i class="material-icons">add</i>-->
+                    D
+                </button>
+            </div>
+
+            <div class="mdl-card__actions mdl-card--border quest-btn" ng-if="!fq.gameBtn">
+
+                <button class="mdl-button mdl-js-button mdl-button--fab option" data-opt="a" disabled>
+                    <!--<i class="material-icons">add</i>-->
+                    A
+                </button>
+                <button class="mdl-button mdl-js-button mdl-button--fab option" data-opt="b" disabled>
+                    <!--<i class="material-icons">add</i>-->
+                    B
+                </button>
+                <button class="mdl-button mdl-js-button mdl-button--fab option" data-opt="c" disabled>
+                    C
+                </button>
+                <button class="mdl-button mdl-js-button mdl-button--fab option" data-opt="d" disabled>
+                    <!--<i class="material-icons">add</i>-->
+                    D
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="content-column mdl-cell mdl-cell--6-col mdl-shadow--2dp conversation-board">
+        <div class="cam-con">
+            <div class="host-cam">
+                <video id='remoteVideo' ng-src="{{fq.remoteVideoUrl}}" autoplay width="100%" height="100%" class="remote"></video>
+            </div>
+            <div class="player-cam">
+                <video id="localVideo" ng-src="{{fq.localVideoUrl}}" autoplay muted width="100%" height="100%" ></video>
+            </div>
+
+        </div>
+        <div class="conversation">
+            <ul class="msg-con">
+                <li ng-repeat="converse in fq.conversations" class=""><span class="{{converse.user + '-msg'}}">{{converse.msg}}</span></li>
+                <!--<li><span class="host-msg">Hello i am yemi, Good day</span></li>-->
+                <!--<li><span class="player-msg">Good day</span></li>-->
+            </ul>
+            <div class="new-msg">
+                <input ng-model="fq.text" type="text" contenteditable="true">
+                <button ng-click="fq.converse(fq.text)">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="content-column mdl-cell mdl-cell--1-col mdl-color--white mdl-shadow--2dp">
+        <div class="level-con">
+            <h3>Game Track</h3>
+            <ul class="level-list">
+                <li data-level="15"><span>10,000</span><i ng-if="fq.levelReached == 15" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="14"><span>5,000</span><i ng-if="fq.levelReached == 14" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="13"><span>4,000</span><i ng-if="fq.levelReached == 13" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="12"><span>3,000</span><i ng-if="fq.levelReached == 12" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="11"><span>2,000</span><i ng-if="fq.levelReached == 11" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="10"><span>1,000</span><i ng-if="fq.levelReached == 10" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="9"><span>900</span><i ng-if="fq.levelReached == 9" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="8"><span>800</span><i ng-if="fq.levelReached == 8" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="7"><span>700</span><i ng-if="fq.levelReached == 7" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="6"><span>600</span><i ng-if="fq.levelReached == 6" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="5"><span>500</span><i ng-if="fq.levelReached == 5" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="4"><span>400</span><i ng-if="fq.levelReached == 4" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="3"><span>300</span><i ng-if="fq.levelReached == 3" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="2"><span>200</span><i ng-if="fq.levelReached == 2" class="material-icons">keyboard_backspace</i></li>
+                <li data-level="1"><span>100</span><i ng-if="fq.levelReached == 1" class="material-icons">keyboard_backspace</i></li>
+            </ul>
+        </div>
+    </div>
+</div>

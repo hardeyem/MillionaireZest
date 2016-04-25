@@ -1,0 +1,40 @@
+<!-- compose message view -->
+<section class="mdl-layout compose-view">
+    <div class="mdl-layout__header-row mdl-color--grey-400">
+        <span>Mail Support </span>
+        <i class="material-icons">help_outline</i>
+        <div class="mail-attach mdl-button mdl-button--icon close">
+            <i class="material-icons md-18 ">close</i>
+        </div>
+    </div>
+    <div class="mail-head">
+        <div class="mail-head-to">
+            <span>To : </span>
+            <span> support@meandyoufun.com</span>
+        </div>
+        <div class="mail-head-subject">
+            <label for="subject">Subject</label>
+            <select>
+                <option>I can't withdraw from my account</option>
+                <option>I have been suspended</option>
+                <option>What do i need to do to withdraw money from my account</option>
+                <option>Can you halp me please?</option>
+                <option>Got closed account mail</option>
+                <option>I stopped to receive notifications</option>
+                <option>The service is not helping me</option>
+                <option>Others</option>
+            </select>
+            <input type="text" class="mail-subject-input" placeholder="Others">
+        </div>
+
+    </div>
+    <div class="mail-body">
+        <div class="mail-msg" contenteditable="true">
+        </div>
+        <div class="mail-attach mdl-button mdl-button--icon">
+            <i class="material-icons md-18">attachment</i>
+        </div>
+    </div>
+    <button class="mdl-button mdl-js-button primary-color">Send</button>
+</section>
+<!-- /compose message-->

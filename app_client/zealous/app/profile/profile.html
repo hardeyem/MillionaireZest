@@ -1,0 +1,278 @@
+<div class="content-grid mdl-grid profile">
+
+    <div class="content-column mdl-cell mdl-cell--2-col">
+        Empty
+    </div>
+    <div class="content-column mdl-cell mdl-cell--7-col">
+
+            <div class=" main-profile">
+                <div class="mdl-grid profile-header primary-color ">
+                    <img src="../../imgs/face5.png" class=" mdl-shadow--8dp profile-header-image">
+
+                    <div class="new-upload">
+                        <input type="file" onchange="profile.previewImg()">
+                    </div>
+                    <!--<div class="new-upload">gyduasfguyvdusvhxcvhgcj bnjhdsbvdsj bcsbhjdhjbdcv</div>-->
+                </div>
+                <div class="mdl-grid mdl-color--white profile-body" style="">
+                    <div class="profile-section mdl-cell mdl-cell--8-col">
+                        <div class="basics">
+                            <div class="p-header">
+                                <span class="header-title">Basics</span>
+                                <span class="header-icon mdl-button mdl-js-button" ng-click="profile.editBasics()"><i class="material-icons">edit</i> </span>
+                            </div>
+                            <form name="basic" id="basic-form" novalidate disabled>
+                                <div class="f-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input name="fullName" ng-model="profile.basic.fullName" type="text" id="fullName" ng-value="profile.basic.fullName" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" ng-model="profile.basic.email" id="email" ng-value="profile.basic.email" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="mobile">Mobile</label>
+                                    <input type="tel" name="mobile" ng-model="profile.basic.mobile" id="mobile" ng-value="profile.basic.mobile" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="dateOfBirth">Date of birth</label>
+                                    <input type="date" name="date_of_birth" ng-model="profile.basic.date_of_birth" id="dateOfBirth" ng-value="profile.basic.date_of_birth" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name=""gender ng-model="profile.basic.gender" ng-value="profile.basic.gender" disabled>
+                                        <option>male</option>
+                                        <option>female</option>
+                                    </select>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" name="address" ng-model="profile.basic.address" id="address" ng-value="profile.basic.address" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="city">City</label>
+                                    <input type="text" name="city" ng-model="profile.basic.city" id="city" ng-value="profile.basic.city" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="state">State</label>
+                                    <input type="text" name="state" ng-model="profile.basic.state" id="state" ng-value="profile.basic.state" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" name="country" ng-model="profile.basic.country" ng-value="profile.basic.country" disabled>
+                                        <option ng-selected>Nigeria</option>
+                                        <option>USA</option>
+                                        <option>UK</option>
+                                        <option>Ghana</option>
+                                        <option>South Africa</option>
+                                        <option>Togo</option>
+                                        <option>Germany</option>
+                                        <option>Holland</option>
+                                        <option>Sweden</option>
+                                        <option>China</option>
+                                    </select>
+                                </div>
+                                <div class="change-btn">
+                                    <input type="submit"  ng-click="profile.updateBasic()" name="updateBasic" class="mdl-button mdl-js-button primary-color" value="Save">
+                                    <button class="mdl-button mdl-js-button discard">discard</button>
+                                </div>
+                            </form>
+                        </div>
+                        <hr/>
+                        <div class="edu-status">
+                            <div class="p-header">
+                                <span class="header-title">Educational Status</span>
+                                <span ng-click="profile.editEdu()" class="header-icon mdl-button mdl-js-button"><i class="material-icons">edit</i> </span>
+                            </div>
+                            <form name="edu-form" ng-submit="profile.updateEdu()" id="edu-form">
+                                <div class="f-group">
+                                    <label for="education">Highest Education Level</label>
+                                    <select id="education" ng-model="profile.edu.education_level" ng-value="profile.edu.education_level" disabled>
+
+                                        <option>Professorship</option>
+                                        <option>Doctorate degree</option>
+                                        <option>Master degree</option>
+                                        <option selected>First degree</option>
+                                        <option>Diploma</option>
+                                        <option>High School</option>
+                                        <option>Primary school</option>
+                                        <option selected>not educated</option>
+                                    </select>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="field">Field of Study</label>
+                                    <input type="text" id="field" ng-model="profile.edu.field" ng-value="profile.edu.field" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="profession">Profession</label>
+                                    <input type="text" id="profession" ng-model="profile.edu.profession" ng-value="profile.edu.profession" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="interest">Interest</label>
+                                    <input type="text" id="interest" ng-model="profile.edu.interest" ng-value="profile.edu.interest" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="hobby">Hobby</label>
+                                    <input type="text" id="hobby" ng-model="profile.edu.hobby" ng-value="profile.edu.hobby" disabled>
+
+                                </div>
+                                <div class="change-btn">
+                                    <input type="submit" ng-click="profile.updateEdu()" class="mdl-button mdl-js-button primary-color" value="save">
+                                    <button class="mdl-button mdl-js-button discard">discard</button>
+                                </div>
+                            </form>
+                        </div>
+                        <hr/>
+                        <div class="fin-status">
+                            <div class="p-header">
+                                <span class="header-title">Financial Status</span>
+                                <span ng-click="profile.editFin()" class="header-icon mdl-button mdl-js-button"><i class="material-icons">edit</i> </span>
+                            </div>
+                            <form id="fin-form">
+                                <div class="f-group">
+                                    <label for="job">Current job</label>
+                                    <input type="text" id="job" ng-model="profile.fin.job" ng-value="profile.fin.job" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="employer">Employer</label>
+                                    <input type="text" id="employer" ng-model="profile.fin.employer" ng-value="profile.fin.employer" disabled>
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="income">Income per month</label>
+                                    <select id="income" ng-model="profile.fin.income" ng-value="profile.fin.income" disabled>
+                                        <option selected>below $100</option>
+                                        <option>$100 - $500</option>
+                                        <option>$500 - $1,000</option>
+                                        <option>$1,000 - $5,000</option>
+                                        <option>$5,000 - $10,000</option>
+                                        <option>$10,000 - $30,000</option>
+                                        <option>$30,000 - $50,000</option>
+                                        <option>$50,000 - $70,000</option>
+                                        <option>$70,000 - $100,000</option>
+                                        <option>above $100,000</option>
+                                    </select>
+
+
+                                </div>
+                                <div class="f-group">
+                                    <label for="worth">Worth</label>
+                                    <select id="worth" ng-model="profile.fin.worth" ng-value="profile.fin.worth" disabled>
+                                        <option selected>below $1,000</option>
+                                        <option>$1,000 - $10,000</option>
+                                        <option>$10,000 - $100,000</option>
+                                        <option>$100,000 - $500,000</option>
+                                        <option>$500,000 - $1,000,000</option>
+                                        <option>$1,000,000 - $1,000,000</option>
+                                        <option>$1,000,000 - $10,000,000</option>
+                                        <option>above $10,000,000</option>
+
+                                    </select>
+
+                                </div>
+                                <div class="change-btn">
+                                    <button type="submit" class="mdl-button mdl-js-button primary-color">Save</button>
+                                    <button class="mdl-button mdl-js-button discard">discard</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col aside-profile">
+                        <div class="date">
+                            <span>member since - </span>
+                            <span class="date-joined">29/01/2018</span>
+                        </div>
+                        <div class="badges">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <div class="kyc">
+                            <h6>Know Your Customer (KYC)</h6>
+                            <div class="mobile-verify">
+                                <span class="kyc-header">Mobile verification<button class="mdl-button mdl-button--mini-icon" disabled><i class="material-icons">smartphone</i></button></span>
+                                <span class="is-verify"><i class="material-icons" style="vertical-align: middle">verified_user</i><i>verified</i></span>
+                                <span>+2348104730007</span>
+                            </div>
+                            <div class="id-verify">
+                                <span class="kyc-header">Identity Verification<button class="mdl-button mdl-button--mini-icon" disabled><i class="material-icons">image</i></button></span>
+                                <span class="is-verify"><i class="material-icons" style="vertical-align: middle">verified_user</i><i>verified</i></span>
+                                <div class="id-details">
+                                    <span class="id-type">National Identity</span>
+                                    <img src="../../imgs/Flower.jpg">
+                                    <span>Expires <i class="id-expires">11/2017</i></span>
+                                </div>
+                                <form class="id-form">
+                                    <div class="id-f-group">
+                                        <label for="type">Type</label>
+                                        <select id="type" disabled>
+                                            <option>National Identity</option>
+                                            <option>Voter's Card</option>
+                                            <option>Driver's Licence</option>
+                                            <option>Registered Student Identity Card</option>
+                                        </select>
+                                    </div>
+                                    <div class="id-f-group">
+                                        <label>Expiry</label>
+                                        <select disabled>
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>03</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>07</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                        <select>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                        </select>
+                                    </div>
+                                    <div class="id-f-group">
+                                        <input type="file" ng-click="profile.selectFile()" required>
+                                    </div>
+
+                                        <button type="submit" class="mdl-button mdl-button--raised primary-color" style="width: 100%; color: #666; margin-top: 8px">update</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+    </div>
+    <div class="content-column mdl-cell mdl-cell--2-col ">
+        Empty
+    </div>
+</div>
