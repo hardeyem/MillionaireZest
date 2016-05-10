@@ -7,33 +7,33 @@
     <!--<base href="hostmania">-->
     <title>MQ - HOST </title>
 
-    <link rel="stylesheet" href="../libs/mdl/material.css">
-    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="../css/host_style.css">
+    <link rel="stylesheet" href="/public/libs/mdl/material.css">
+    <link rel="stylesheet" href="/public/libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/css/host_style.css">
 
 
     <!-- build:scripts -->
 
     <!-- jQuery -->
-    <script src="../libs/jquery/dist/jquery.js"></script>
+    <script src="/public/libs/jquery/dist/jquery.js"></script>
     <!-- Bootstrap -->
     <!--<script src="libs/bootstrap/dist/js/bootstrap.js"></script>-->
     <!-- lodash -->
     <!--<script src="libs/lodash/dist/lodash.js"></script>-->
-    <script src="../libs/mdl/material.js"></script>
+    <script src="/public/libs/mdl/material.js"></script>
     <!--- Socket =---->
     <script src="/socket.io/socket.io.js"></script>
 
     <!-- Angular Core -->
-    <script src="../libs/angular/angular.js"></script>
-    <script src="../libs/angular-resource/angular-resource.js"></script>
-    <script src="../libs/angular-route/angular-route.js"></script>
-    <script src="../libs/angular-messages/angular-messages.js"></script>
+    <script src="/public/libs/angular/angular.js"></script>
+    <script src="/public/libs/angular-resource/angular-resource.js"></script>
+    <script src="/public/libs/angular-route/angular-route.js"></script>
+    <script src="/public/libs/angular-messages/angular-messages.js"></script>
 
     <!-- Angular UI -->
     <!--<script src="libs/angular-bootstrap/ui-bootstrap.js"></script>-->
     <!--<script src="libs/angular-ui-utils/ui-utils.js"></script>-->
-    <script src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/public/libs/angular-ui-router/release/angular-ui-router.js"></script>
     <!--<script src="libs/angular-ui-select/dist/select.js"></script>-->
 
     <!-- Access Core -->
@@ -50,8 +50,8 @@
 
     <!--- Home and Navbar module --->
     <script src="host_app/dash/dash_ctrl.js"></script>
-    <script src="../common/directives/host_menu.js"></script>
-    <script src="../common/controllers/host_menu.js"></script>
+    <script src="/public/common/directives/host_menu.js"></script>
+    <script src="/public/common/controllers/host_menu.js"></script>
 
 
     <!---- Game Module -------->
@@ -61,16 +61,14 @@
 
     <!-- Model Services -->
     <!--<script src="app/common/service/access-service.js"></script>-->
-    <!--<script src="../common/services/login-service.js"></script>-->
+    <!--<script src="/app_client/common/services/login-service.js"></script>-->
     <!--<script src="app/common/service/register-service.js"></script>-->
     <!--<script src="app/common/services/user-service.js"></script>-->
-    <script src="../common/services/host_auth.js"></script>
-    <script src="../common/services/HostSvc.js"></script>
+    <script src="/public/common/services/host_auth.js"></script>
+    <script src="/public/common/services/HostSvc.js"></script>
 <body ng-app="HostModule">
 
     <div ui-view>
-
     </div>
-
 </body>
 </html>

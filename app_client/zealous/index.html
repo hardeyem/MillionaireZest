@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!--<base href="zealous" />-->
+    <title>Dash</title>
+
+    <link rel="stylesheet" href="/public/libs/mdl/material.css">
+    <link rel="stylesheet" href="/public/libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/css/global_style.css" />
+    <link rel="stylesheet" href="/public/css/access_style.css" />
+    <link rel="stylesheet" href="/public/css/entry.css" />
+    <link rel="stylesheet" href="/public/css/register.css" />
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/gameboard.css">
+    <link rel="stylesheet" href="/public/css/fqgame_style.css">
+    <link rel="stylesheet" href="/public/css/profile.css">
+
+
+    <!-- build:scripts -->
+
+    <!-- Material design ------->
+    <script src="/public/libs/mdl/material.js"></script>
+
+    <!-- jQuery -->
+    <script src="/public/libs/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap -->
+    <!--<script src="libs/bootstrap/dist/js/bootstrap.js"></script>-->
+    <!-- lodash -->
+    <!--<script src="libs/lodash/dist/lodash.js"></script>-->
+
+    <!--- Socket =---->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Angular Core -->
+    <script src="/public/libs/angular/angular.js"></script>
+    <script src="/public/libs/angular-resource/angular-resource.js"></script>
+    <script src="/public/libs/angular-route/angular-route.js"></script>
+    <script src="/public/libs/angular-messages/angular-messages.js"></script>
+
+    <!-- Angular UI -->
+    <!--<script src="libs/angular-bootstrap/ui-bootstrap.js"></script>-->
+    <!--<script src="libs/angular-ui-utils/ui-utils.js"></script>-->
+    <script src="/public/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--<script src="libs/angular-ui-select/dist/select.js"></script>-->
+
+    <!-- Zealous Application Core -->
+    <script src="MZApp/zealous_module.js"></script>
+    <script src="MZApp/zealous.js"></script>
+    <script src="MZApp/zealous_route.js"></script>
+
+
+
+    <!-- Zealous main module -->
+    <!--<script src="/public/zealous/app/main/main_controller.js"></script>-->
+
+    <!-- Dashboard Module -->
+    <script src="MZApp/dashboard/dash_routes.js"></script>
+    <script src="MZApp/dashboard/dash_ctrl.js"></script>
+
+    <!-- Access Module -->
+    <script src="MZApp/access/access_module.js"></script>
+    <script src="MZApp/access/access_routes.js"></script>
+    <script src="MZApp/access/auth/auth-controller.js"></script>
+    <script src="MZApp/access/register/register-controller.js"></script>
+
+    <!-- Entry Module -->
+    <script src="MZApp/entry/entry_module.js"></script>
+    <script src="MZApp/entry/entry_route.js"></script>
+    <script src="MZApp/entry/entry_ctrl.js"></script>
+
+    <!-- Account Module -->
+    <script src="MZApp/account/account_module.js"></script>
+    <script src="MZApp/account/account_route.js"></script>
+    <!--<script src="MZApp/account/account_module.js"></script>-->
+
+
+    <!-- Game Board Module -->
+    <script src="MZApp/gameboard/gameboard_module.js"></script>
+    <script src="MZApp/gameboard/gameboard_route.js"></script>
+    <script src="MZApp/gameboard/gameboard_ctrl.js"></script>
+
+    <!-- Final Quest Board -->
+    <script src="MZApp/finalquest/fq_module.js"></script>
+    <script src="MZApp/finalquest/fq_route.js"></script>
+    <script src="MZApp/finalquest/fq_ctrl.js"></script>
+
+    <!-- History Module -->
+    <script src="MZApp/history/history_module.js"></script>
+    <script src="MZApp/history/history_route.js"></script>
+    <!--<script src="MZApp/history/history_module.js"></script>-->
+
+    <!-- Profile Module -->
+    <script src="MZApp/profile/profile_module.js"></script>
+    <script src="MZApp/profile/profile-route.js"></script>
+    <script src="MZApp/profile/profile_ctrl.js"></script>
+
+    <!-- Settings Module -->
+    <script src="MZApp/settings/settings_module.js"></script>
+    <script src="MZApp/settings/settings_route.js"></script>
+    <!-- / End Application Module-->
+
+    <!-- Model Services --->
+    <script src="common/services/authtentication.js"></script>
+    <script src="common/services/entry.js"></script>
+    <script src="common/services/fqGameSvc.js"></script>
+    <script src="common/services/commentSvc.js"></script>
+
+    <!-- Controllers ---->
+    <script src="common/controllers/navbar.js"></script>
+
+    <!-- Directives ---->
+    <script src="common/directives/left_navbar.js"></script>
+    <script src="common/directives/top_navbar.js"></script>
+    <script src="common/directives/notifications.js"></script>
+    <script src="common/directives/messages.js"></script>
+    <script src="common/directives/live_show.js"></script>
+    <script src="common/directives/compose_message.js"></script>
+    <script src="common/directives/footer.js"></script>
+
+</head>
+<body ng-app="MZApp">
+    <div id="main-wrapper">
+        <div ui-view=""></div>
+    </div>
+</body>
+</html>

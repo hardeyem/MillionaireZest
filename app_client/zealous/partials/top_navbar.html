@@ -4,17 +4,17 @@
             <!-- Title -->
             <!--<span class="mdl-layout-title">Title</span>-->
             <nav class="mdl-navigation  menu-left">
-                <a class="mdl-navigation__link" href="/dash" >Dash</a>
-                <a class="mdl-navigation__link" href="/entry">Entry</a>
-                <a class="mdl-navigation__link" href="/gameboard">Board</a>
-                <a class="mdl-navigation__link" href="/finalquest" >Quest</a>
-                <a class="mdl-navigation__link" href="/account" >Zone</a>
+                <a class="mdl-navigation__link" ui-sref="dashboard" >Dash</a>
+                <a class="mdl-navigation__link" ui-sref="entry">Entry</a>
+                <a class="mdl-navigation__link" ui-sref="gameboard">Board</a>
+                <a class="mdl-navigation__link" ui-sref="finalquest" >Quest</a>
+                <a class="mdl-navigation__link" ui-sref="account" >Account</a>
             </nav>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer" style="text-align: center">Game Lucre<i class="material-icons">star</i></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation menu-right">
-                <div class="mdl-navigation__link menu-icon-text" href=""><span>Link3</span><i
+                <div class="mdl-navigation__link menu-icon-text"><span>Link3</span><i
                         class="material-icons md-24">account_balance</i></div>
 
                 <!--<a class="mdl-navigation__link menu-icon-text" href=""><span>Adeyemi olalekan</span><i
@@ -30,11 +30,11 @@
                         <div class="dropdownContain">
                             <div class="arrow-menu">
                                 <div class="profile-menu">
-                                    <a href=""  class="profile-link">profile</a>
+                                    <a ui-sref="profile"  class="profile-link">profile</a>
                                     <div class="menu-divider"></div>
-                                    <a href=""  class="account-link">account</a>
+                                    <a ui-sref="account"  class="account-link">account</a>
                                 </div>
-                                <a href="logout"  class="logout">Log Out</a>
+                                <a  class="logout">Log Out</a>
                             </div>
                         </div>
                     </div>
@@ -49,8 +49,8 @@
                         <div class="dropdownContain">
                             <div class="arrow-menu">
                                 <ul>
-                                    <li><a href="">History</a> </li>
-                                    <li><a href="">Settings</a> </li>
+                                    <li><a ui-sref="history">History</a> </li>
+                                    <li><a ui-sref="settings">Settings</a> </li>
                                     <li><a href="">MQ</a> </li>
                                 </ul>
                             </div>

@@ -128,86 +128,89 @@ socketServer.init = function(server, sessionStore, myCookieParser){
             if(!err){
                 console.log("got entry from socket");
                 //console.log(entry);
-                if((entry.entries != undefined || entry.entries != null) && entry.entries.length > 0){
-                    var type = entry.entries[0].gameType;
-                    console.log("connecting to " + type);
-                    var entryId = entry.entries[0].entryId;
+                if(entry) {
+                    if ((entry.entries != undefined || entry.entries != null) && entry.entries.length > 0) {
+                        var type = entry.entries[0].gameType;
+                        console.log("connecting to " + type);
+                        var entryId = entry.entries[0].entryId;
 
-                    //We can't just add user to phase default we neeed to check for the current phase
-                    //and check to see if the user is in the phase and allow the user to join correct phaase
-                    //if valid
+                        //We can't just add user to phase default we neeed to check for the current phase
+                        //and check to see if the user is in the phase and allow the user to join correct phaase
+                        //if valid
 
-                    //var curPhase = socketServer.currentPhase;
-                    var socketId = socket.id;
-                    console.log('got entry of ' + entryId);
-                    var data = {
-                        entryId : entryId,
-                        socketId : socketId
-                    };
-                    console.log(data);
-                    console.log(socket.id);//got the socket id on connection
+                        //var curPhase = socketServer.currentPhase;
+                        var socketId = socket.id;
+                        console.log('got entry of ' + entryId);
+                        var data = {
+                            entryId: entryId,
+                            socketId: socketId
+                        };
+                        console.log(data);
+                        console.log(socket.id);//got the socket id on connection
 
-                    /* update users socket */
-                    Entry.addSocketId(data, function(updated){
-                        if(updated){
-                            console.log('unable to update record');
-                        }else{
-                            console.log('updated record');
-                        }
-                    });
+                        /* update users socket */
+                        Entry.addSocketId(data, function (updated) {
+                            if (updated) {
+                                console.log('unable to update record');
+                            } else {
+                                console.log('updated record');
+                            }
+                        });
 
-                    GameUpdate.getCurrentPhase(function(done, phase){
-                        if(done){
-                            var data = {
-                                entryId : entryId,
-                                phase : phase
-                            };
+                        GameUpdate.getCurrentPhase(function (done, phase) {
+                            if (done) {
+                                var data = {
+                                    entryId: entryId,
+                                    phase: phase
+                                };
 
-                            console.log('current phase frm socket init : ' + phase);
-                            if(phase == 1 ){
-                                console.log('joining default room ' + type);
-                                socket.join(type);
-                            }else {
+                                console.log('current phase frm socket init : ' + phase);
+                                if (phase == 1) {
+                                    console.log('joining default room ' + type);
+                                    socket.join(type);
+                                } else {
 
-                                UserGame.confirmUserInCurrentPhase(data, function (done, isInPhase) {
-                                    if (done && isInPhase) {
-                                        ////user still in game  add socket
-                                        var phaseRoom = "phase"+ phase + type;
-                                        console.log('user joing quest type ' + phaseRoom);
-                                        socket.join(phaseRoom);
+                                    UserGame.confirmUserInCurrentPhase(data, function (done, isInPhase) {
+                                        if (done && isInPhase) {
+                                            ////user still in game  add socket
+                                            var phaseRoom = "phase" + phase + type;
+                                            console.log('user joing quest type ' + phaseRoom);
+                                            socket.join(phaseRoom);
 
+                                        } else {
+                                            console.log('user not in current phase');
+                                            socket.emit('game:loose', {msg: 'sorry you loosed the game'});
+                                        }
+                                    });
+                                }
+                                ///get game details
+                                UserGame.getUserGameAccount(entryId, function (done, userAccount) {
+                                    if (done) {
+                                        console.log(userAccount);
+                                        socket.emit('game:earned', userAccount);
                                     } else {
-                                        console.log('user not in current phase');
-                                        socket.emit('game:loose', {msg : 'sorry you loosed the game'});
+                                        console.log('error getting user game account');
                                     }
                                 });
+
+                            } else {
+                                console.log('error getting phase for socket init');
                             }
-                            ///get game details
-                            UserGame.getUserGameAccount(entryId, function(done, userAccount){
-                                if(done){
-                                    console.log(userAccount);
-                                    socket.emit('game:earned', userAccount);
-                                } else{
-                                    console.log('error getting user game account');
-                                }
-                            });
-
-                        }else{
-                            console.log('error getting phase for socket init');
-                        }
-                    });
+                        });
 
 
+                        //console.log('removing socket from room');
+                        //var socketId = socket.id;//we need to have a reference of the socket id
 
-                    //console.log('removing socket from room');
-                    //var socketId = socket.id;//we need to have a reference of the socket id
+                        //console.log(socketServer.gameGenIO.sockets);
+                        //console.log(socketId);
+                        //socketServer.gameGenIO.connected[socketId].leave(type);//work for removing client from room
 
-                    //console.log(socketServer.gameGenIO.sockets);
-                    //console.log(socketId);
-                    //socketServer.gameGenIO.connected[socketId].leave(type);//work for removing client from room
-
-                }else {
-                    console.log("entry not found from socket");
+                    } else {
+                        console.log("entry not found from socket");
+                    }
+                }else{
+                    console.log('entry null unable to connect to db');
                 }
 
             }else{
@@ -522,7 +525,7 @@ socketServer.runLastGameTask = function(lastPhase){
                             // add earned amount for upgraded users
                             console.log('trying to update user earned');
                             console.log(usersGameDoc);
-                            var earned = calculateEarnedFromOdd(lastPhase);
+                            var earned = calculateEarnedFromOdd(lastPhase + 1);
                             console.log('earned : ' + earned);
                             if (usersGameDoc !== null && usersGameDoc != undefined) {
                                 usersGameDoc.forEach(function (userDoc, index) {
@@ -621,10 +624,11 @@ function removeAllClientsInRoom(currentPhase){
 
                     console.log('Removing users from phase ' + currentPhase);
                     var gameType;
+                    var phase = currentPhase -1;
                     if(currentPhase == 2)
                         gameType = entry.gameType;
                     else if(currentPhase > 2)
-                        gameType = 'phase'+ currentPhase + entry.gameType;
+                        gameType = 'phase'+ phase + entry.gameType;
 
                     console.log('user leaving room ' + gameType);
                     console.log(socketId);
@@ -633,6 +637,7 @@ function removeAllClientsInRoom(currentPhase){
                             //user is connected so remove
                             socketServer.gameGenIO.connected[socketId].leave(gameType);
                         } else {
+                            console.log('unable to connect the user');
                             //user is not connected do nothing but something will be done if the userr is connecting back
                         }
 

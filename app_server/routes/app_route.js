@@ -24,30 +24,36 @@ module.exports = function(app, baseDir){
 
     app.route('/')
         .get(function(req, res, next){
-            console.log('routing from global route to public');
+            console.log('routing from global route to app_client');
             console.log('app path' + baseDir);
-            res.sendFile(baseDir + '/zealous/main/index.html');
+            res.sendFile(baseDir + '/main/index.html');
         });
 
-    app.route('/access/auth')
+    app.route('/access')
         .get(function(req, res, next){
-            console.log('routing user auth login');
+            console.log('routing user access page');
             console.log('app path' + baseDir);
-            res.sendFile(baseDir + '/zealouszealous/access/login/index.html');
+            res.sendFile(baseDir + '/zealous/access/index.html');
         });
 
-    app.route('/access/register')
+    /*app.route('/access/register')
         .get(function(req, res, next){
             console.log('routing user register');
             console.log('app path' + baseDir);
             res.sendFile(baseDir + '/zealous/access/register/index.html');
         });
-
-    app.route('/dash')
+*/
+    app.route('/zealous')
         .get(function(req, res,next){
-            console.log('routing the dashboard');
-            res.sendFile(baseDir + '/zealous/app/dashboard/index.html');
+            console.log('routing the zealous');
+            res.sendFile(baseDir + '/zealous/index.html');
         });
+    /*app.route('/zealous/!*')
+        .get(function(req, res,next){
+            console.log('routing the zealous');
+            res.sendFile(baseDir + '/zealous/index.html');
+        });*/
+
     app.route('/gameboard')
         .get(function(req, res,next){
             console.log('routing the gameboard');

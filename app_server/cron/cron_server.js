@@ -239,9 +239,6 @@ var dailyTaskHandler = function(){
     });
 
 
-
-
-
     var self = cronServer;
     self.phaseTaskManager.start();
     if(count == 3){
@@ -307,7 +304,7 @@ cronServer.updateEarned = function(){
 };
 
 cronServer.dailyTaskManager = new CronJob({
-    cronTime : '00 55 11 * * 0-6',
+    cronTime : '00 59 05 * * 0-6',
     onTick : dailyTaskHandler,
     start: true,
     onComplete: function(){

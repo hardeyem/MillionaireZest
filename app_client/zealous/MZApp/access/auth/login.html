@@ -1,0 +1,73 @@
+<div class="access-content">
+    <h3>Access content goes here</h3>
+    <span>{{user}}</span>
+    <!--<ul class="access-link">
+        <li ><a href="#login" class="access-link-item" ng-click="loginView();">Sign In</a> </li>
+        <li ><a href="#register" class="access-link-item" ng-click="registerView();">{{testName}}</a> </li>
+    </ul>-->
+    <div class="access-auth">
+        <div id="login-wrapper">
+            <div class="new-user-con">
+                <!-- <hr style="margin: 3%; color: #ECE9E9; line-height: 2px">-->
+                <!--<h3 class="form-divider"><span>OR</span></h3>-->
+                <h3>don't have account yet</h3>
+                <a ui-sref="access.register" class="register-btn">Register New Account</a>
+            </div>
+            <h3 class="access-heading">
+                Login to LMQ
+
+            </h3>
+            <!--<a ui-sref="access.register">Register</a>-->
+            <div class="login-con">
+                <form name="loginForm"  ng-submit="auth.onSubmit()" novalidate>
+                    <div class="form-group" ng-class="{'has-error': loginForm.userEmail.$invalid}">
+                        <label><i class="fa fa-fw fa-user"></i></label>
+                        <input type="email" ng-model="auth.credentials.email" name="userEmail" placeholder="Your email" required>
+                        <!--<div ng-if="loginForm.userEmail.$touched && loginForm.userEmail.$invalid"
+                             ng-messages="loginForm.userEmail.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': loginForm.userPassword.$invalid}">
+                        <label><i class="fa fa-fw fa-lock"></i></label>
+                        <input type="password" ng-model="auth.credentials.password" name="userPassword" placeholder="password" required>
+                        <!--<div ng-show="loginForm.userPassword.$touched && loginForm.userPassword.$invalid"
+                             ng-messages="loginForm.userPassword.$error"
+                             ng-messages-include="app/messages/error-messages.html"
+                             class="help-block has-error col-xs-offset-3">
+                        </div>-->
+                    </div>
+                    <div class="form-rember">
+                        <label>
+                            <input type="checkbox" ng-model="auth.credentials.autoLogin">Remember me
+                        </label>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" value="login" name="login" >
+                    </div>
+                    <div class="form-forgot">
+                        <a href="" >forgot password<i class="fa fa-question"></i></a>
+                    </div>
+
+                </form>
+            <div class="msg-toast">{{toastMsg}}</div>
+            </div>
+            <div class="social-login-con">
+                <hr style="margin: 3%; color: #ECE9E9; line-height: 2px">
+                <h3 class="form-divider">
+                    <span>OR</span>
+
+                </h3>
+                your typing goes her : {{login.typed}}
+                <small>Login Using</small>
+                <ul class="list-group">
+                    <li class="">Facebook</li>
+                    <li class="">Twitter</li>
+                    <li class="">Gmail</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

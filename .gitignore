@@ -1,5 +1,6 @@
 .idea
 node_modules
+nginx
 dunmp_file.js
 dunmp_file.zip
 resources

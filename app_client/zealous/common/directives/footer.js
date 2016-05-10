@@ -1,5 +1,5 @@
 /**
- * Created by TK on 13/02/2016.
+ * Created by Adekunle Adeyemi on 13/02/2016.
  */
 
 (function(window, angular, undefined) {
@@ -10,8 +10,8 @@
         .directive('qpFooter', [function () {
             return {
                 restrict: 'E',
-                templateUrl: '../partials/footer.html',
-                controller : 'FooterCtrl'
+                templateUrl: 'partials/footer.html'
+                //controller : 'FooterCtrl'
 
             };
         }]);

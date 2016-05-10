@@ -1,0 +1,58 @@
+<div qp-left-navbar id="left-navbar-wrapper"></div>
+
+<div id="content-wrapper" class="mdl-color--grey-300">
+    <div qp-top-navbar id="top-navebar-wrapper"></div>
+    <section>
+
+        <div class="content-grid mdl-grid entry-con">
+            <div class="content-column mdl-cell mdl-cell--4-col">
+                <div>{{entry.msg}}</div>
+            </div>
+            <div class="content-column mdl-cell mdl-cell--4-col entry">
+                <div  class="entry-card-wide mdl-card mdl-shadow--2dp" novalidate >
+                    <!--<div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Welcome</h2>
+                    </div>-->
+                    <!--<div class="mdl-card__supporting-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Mauris sagittis pellentesque lacus eleifend lacinia...
+                    </div>-->
+
+                    <div class="entry-form" >
+
+                        <div>
+                            <label>Game type</label>
+                                <select ng-model="entry.type" name="type" class="">
+                                    <option selected value="general" >General</option>
+                                    <option value="sport">Sport</option>
+                                </select>
+
+                        </div>
+                        <div>
+                            <label>Amount</label>
+                                <select ng-model="entry.amount" name="amount" disabled>
+                                    <option value="1" selected>$1.00</option>
+                                </select>
+                        </div>
+
+
+                    <div class="mdl-card__actions mdl-card--border">
+                        <input type="submit" ng-click="entry.submitEntry()" value="Enter Game" name="enter" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Make Payment
+                        </a>
+                    </div>
+                    <!--<div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button&#45;&#45;icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">share</i>
+                        </button>
+                    </div>-->
+                        <!--</form>-->
+                    </div>
+                </div>
+            </div>
+            <div class="content-column mdl-cell mdl-cell--2-col"></div>
+            <div class="content-column mdl-cell mdl-cell--2-col"> {{entry.user}}</div>
+        </div>
+    </section>
+</div>
